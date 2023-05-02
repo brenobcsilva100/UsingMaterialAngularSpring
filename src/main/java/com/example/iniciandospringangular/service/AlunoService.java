@@ -4,6 +4,8 @@ import com.example.iniciandospringangular.persistence.model.Aluno;
 import com.example.iniciandospringangular.persistence.reposiotry.AlunoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AlunoService {
 
@@ -15,5 +17,9 @@ public class AlunoService {
 
     public Aluno salvar(Aluno aluno) {
         return alunoRepository.save(aluno);
+    }
+
+    public List<Aluno> mostrar() {
+        return alunoRepository.findAll();
     }
 }
