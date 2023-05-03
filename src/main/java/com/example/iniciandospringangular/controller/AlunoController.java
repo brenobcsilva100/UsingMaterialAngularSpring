@@ -21,7 +21,8 @@ public class AlunoController {
     }
 
     @PostMapping("/cadastrarAluno")
-    public ResponseEntity<Aluno> cadastrandoAluno(@RequestBody Aluno aluno){
+    public ResponseEntity<Aluno> cadastrandoAluno(@RequestBody Aluno aluno) throws Exception {
+        alunoService.salvar(aluno);
         return new ResponseEntity<>(alunoService.salvar(aluno), HttpStatus.CREATED);
     }
 
